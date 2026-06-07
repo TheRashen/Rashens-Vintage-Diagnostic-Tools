@@ -1,12 +1,14 @@
 This is a place holder readme, I'll get around to writing a full readme for this later...
 
 
-PLEASE NOTE: THIS IS A ONE-FILE COMPILED SOFTWARE MADE ENTIRELY WITHIN PYTHON, AS THAT'S THE LANGUAGE I'M BEST WITH. 
-
-NO AI WAS USED DURING THE CREATION OF THIS, IF SOMETHING 'SEEMS' AI IT IS MERELY A HAPPENSTANCE DUE TO WHAT POPULAR LLMS WERE USED TO TRAIN ON WAS MORE THAN LIKELY THE SAME, OR SIMILAR, SOURCES I LEARNED ALL CODING FROM OVER THE PAST 2-IN-A-HALF-DECADES.
+PLEASE NOTE: This is a ONE-FILE compiled software made entirely within PYTHON, as that's the language I'm best with. 
 
 
 
-THIS PROGRAM AS IT IS A ONE-FILE COMPILATION **WILL** BE FLAGGED BY ANTIVIRUS' BECAUSE IT ISN'T, *bear with me here....*, "DIGITALLY SIGNED" by some archaic system that gatekeeps software development. 
+Absolutely NO LLMs('Ai') were used during the creation of this, if something 'seems' 'ai' it is merely a happenstance due to what popular llms were used to train on was more than likely the same, or similar, sources i learned all coding from over the past 2-in-a-half-decades.
 
-OTHER THAN MY PYTHON CODE THIS IS A **CLEAN** FILE.
+
+
+This program as it is a ONE-FILE compilation **will** be flagged by antivirus' because it isn't, *bear with me here....*, "digitally signed" by some archaic system that gatekeeps software development. 
+
+other than my python code this is a **clean** file.
