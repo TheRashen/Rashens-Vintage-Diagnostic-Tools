@@ -61,27 +61,25 @@ Experimental Patcher
 
 --------
 
-  Cylinder Pack Builder - format notes:
+Cylinder Pack Builder - format notes:
     - OGG files must be Vorbis-encoded. OGG containers with Opus or FLAC
       inside are rejected - VS's audio decoder only handles Vorbis. This
       is common with OGGs downloaded from certain sites (YouTube rips, etc).
       Re-encode with ffmpeg: ffmpeg -i input.ogg -c:a libvorbis output.ogg
 
       
-   MP3 files require ffmpeg on your (installed on your system and enabled in your enviroment variables) PATH. If ffmpeg isn't installed, MP3s are silently skipped. Get it at ffmpeg.org (add to PATH during or after install). Once on PATH, restart the tool and rebuild.
+MP3 files require ffmpeg on your (installed on your system and enabled in your enviroment variables) PATH. If ffmpeg isn't installed, MP3s are silently skipped. Get it at ffmpeg.org (add to PATH during or after install). Once on PATH, restart the tool and rebuild.
 
     
-   Conversion uses libvorbis quality 4, which is fine for game audio.
+Conversion uses libvorbis quality 4, which is fine for game audio.
 
-    
-   Subfolder structure is preserved in track names if you organize by
-      album/game. All subfolders are scanned recursively.
+Subfolder structure is preserved in track names if you organize by album/game. All subfolders are scanned recursively.
 
       
-   When you run the pack builder please note that all the features may not currently work as expected and it will continuesly open ffmpeg and close it in a shell window until it is done with the current task. That being said, it will output an error if it messes up at anypoint but it will attempt to still make the 'mod' regardless if 99% of the tracks are unable to be added properly.
+When you run the pack builder please note that all the features may not currently work as expected and it will continuesly open ffmpeg and close it in a shell window until it is done with the current task. That being said, it will output an error if it messes up at anypoint but it will attempt to still make the 'mod' regardless if 99% of the tracks are unable to be added properly.
 
     
-   It adds loot table drops to Drifters & Bells at a low drop-rate, default is 0.05 you are free to change these values by opening up the cylinder pack zip and going to the "assets/name/patches/" and selecting one of the two jsons that handles the different drops. I have tested this and it works with even multiple of these packs installed.
+It adds loot table drops to Drifters & Bells at a low drop-rate, default is 0.05 you are free to change these values by opening up the cylinder pack zip and going to the "assets/name/patches/" and selecting one of the two jsons that handles the different drops. I have tested this and it works with even multiple of these packs installed.
 
 
 Edit menu
