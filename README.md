@@ -14,8 +14,10 @@ Requirements
 ------------
 
 Windows
-Vintage Story installed (needed for save file and cache operations - the
-tool doesn't run VS, just needs to know where it is)
+Vintage Story installed, needed for save file and cache operations.
+
+The tool doesn't run VS, just needs to know where it is.
+
 It doesn't necessarily HAVE to have VS installed, it can actually be ran just as a log checker to make things a little easier to parse if you merely use it to 'scan runtime logs' and point at a log location or add files to it. Otherwise, yes it needs a VS data location.
 
 
