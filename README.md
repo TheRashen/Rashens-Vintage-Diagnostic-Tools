@@ -14,8 +14,10 @@ Requirements
 ------------
 
 Windows
-Vintage Story installed (needed for save file and cache operations - the
-tool doesn't run VS, just needs to know where it is)
+Vintage Story installed, needed for save file and cache operations.
+
+The tool doesn't run VS, just needs to know where it is.
+
 It doesn't necessarily HAVE to have VS installed, it can actually be ran just as a log checker to make things a little easier to parse if you merely use it to 'scan runtime logs' and point at a log location or add files to it. Otherwise, yes it needs a VS data location.
 
 
@@ -59,18 +61,27 @@ Experimental Patcher
   checker, and the Custom Cylinder Pack Builder.
 
 
+--------
 
-  Cylinder Pack Builder - format notes:
+Cylinder Pack Builder - format notes:
     - OGG files must be Vorbis-encoded. OGG containers with Opus or FLAC
       inside are rejected - VS's audio decoder only handles Vorbis. This
       is common with OGGs downloaded from certain sites (YouTube rips, etc).
       Re-encode with ffmpeg: ffmpeg -i input.ogg -c:a libvorbis output.ogg
-    - MP3 files require ffmpeg on your (installed on your system and enabled in your enviroment variables) PATH. If ffmpeg isn't installed, MP3s are silently skipped. Get it at ffmpeg.org (add to PATH during or after install). Once on PATH, restart the tool and rebuild.
-    - Conversion uses libvorbis quality 4, which is fine for game audio.
-    - Subfolder structure is preserved in track names if you organize by
-      album/game. All subfolders are scanned recursively.
-    - When you run the pack builder please note that all the features may not currently work as expected and it will continuesly open ffmpeg and close it in a shell window until it is done with the current task. That being said, it will output an error if it messes up at anypoint but it will attempt to still make the 'mod' regardless if 99% of the tracks are unable to be added properly.
-    - It adds loot table drops to Drifters & Bells at a low drop-rate, default is 0.05 you are free to change these values by opening up the cylinder pack zip and going to the "assets/name/patches/" and selecting one of the two jsons that handles the different drops. I have tested this and it works with even multiple of these packs installed.
+
+      
+MP3 files require ffmpeg on your (installed on your system and enabled in your enviroment variables) PATH. If ffmpeg isn't installed, MP3s are silently skipped. Get it at ffmpeg.org (add to PATH during or after install). Once on PATH, restart the tool and rebuild.
+
+    
+Conversion uses libvorbis quality 4, which is fine for game audio.
+
+Subfolder structure is preserved in track names if you organize by album/game. All subfolders are scanned recursively.
+
+      
+When you run the pack builder please note that all the features may not currently work as expected and it will continuesly open ffmpeg and close it in a shell window until it is done with the current task. That being said, it will output an error if it messes up at anypoint but it will attempt to still make the 'mod' regardless if 99% of the tracks are unable to be added properly.
+
+    
+It adds loot table drops to Drifters & Bells at a low drop-rate, default is 0.05 you are free to change these values by opening up the cylinder pack zip and going to the "assets/name/patches/" and selecting one of the two jsons that handles the different drops. I have tested this and it works with even multiple of these packs installed.
 
 
 Edit menu
@@ -124,5 +135,22 @@ Absolutely NO LLMs('Ai') were used during the creation of this, if something 'se
 I also study user interfaces, aswell as other nuanced everyday things and features that modern technology has for optimal user functionality, as a Game Dev and systems architect I use my knowledge to attempt to make things as visually pleasing as possible to our eyes as no one want to be hunched over scanning lines all day, especially folks who are *not* coders or in tech fields.
 
 
+----
 
-This program as it is a ONE-FILE compilation **will** be flagged by antivirus' because it isn't, *bear with me here....*, "digitally signed" by some archaic system that gatekeeps software development.   This is a **clean** file.
+
+
+Credits & Attribution Requirements
+
+If you use my tool for troubleshooting issues (such as "I found x problem using this tool here: link") or any function of the tool to release something to a public page, you MUST link to my github / this page, or name "Rashen" as a contributor in your modinfo.json.
+
+I wouldn't normally do a requirement like this however, I have spent over 30 days working on this tool to get it to this current version of my free time and I would prefer it if I was at least credited.
+Antivirus Notice
+
+
+---
+
+NOTICE: 
+
+This program as it is a ONE-FILE compilation will be flagged by antivirus' because it isn't, bear with me here...., "digitally signed" by some archaic system that gatekeeps software development. This is a clean file.
+
+There are plenty of sources that back this up, if you're interested in reading about it there is an article here (https://www.pythonguis.com/faq/problems-with-antivirus-software-and-pyinstaller/) and there are plenty of others just a google search away.
