@@ -1,6 +1,14 @@
 CHANGELOG
 =========
 
+v0.7.2.7 - July 3, 2026
+-----------------------
+
+Hotfix, verified the cylinder pack creator properly strips the problematic encoding types from mp3s when converting. Such as album art and other possible encoded tracks are now allowed once again.
+
+That should be the only change.
+
+
 
 v0.7.2 - July 2, 2026
 ----------------------
