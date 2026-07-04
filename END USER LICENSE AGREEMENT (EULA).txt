@@ -2,7 +2,8 @@ END USER LICENSE AGREEMENT (EULA)
 Copyright (C) 2026 Rashen. All rights reserved.
 
 1. LICENSE GRANT
-This software is licensed, not sold. Rashen grants you a non-exclusive, non-transferable, revocable license to run the compiled executable file (.exe) strictly for personal or internal business use.
+This software is licensed, not sold. Rashen grants you a non-exclusive, non-transferable, revocable license to run the compiled executable file (.exe) strictly for personal or commercial use. 
+However You MUST credit my Github if you use the software to produce content meant for releasing to the public or offer services to the public using my software. 
 
 2. RESTRICTIONS
 You explicitly agree NOT to:
