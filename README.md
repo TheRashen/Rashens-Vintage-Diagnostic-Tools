@@ -139,10 +139,18 @@ I also study user interfaces, aswell as other nuanced everyday things and featur
 
 
 
-Credits:
+Credits & Attribution Requirements
 
-If you use my tool for troubleshooting issues or any function of the tool to release something to the public etc you *NEED* to credit me on your moddb page (link to my github / this page) or in your modinfo.json name "Rashen" as a contributor. 
-I wouldn't normally do a requirement like this however, I have spent over 30 days working on this tool to get it to this current version of my free time and I would prefer it if I was atleast creditted.
+If you use my tool for troubleshooting issues (such as "I found x problem using this tool here: link") or any function of the tool to release something to a public page, you MUST link to my github / this page, or name "Rashen" as a contributor in your modinfo.json.
+
+I wouldn't normally do a requirement like this however, I have spent over 30 days working on this tool to get it to this current version of my free time and I would prefer it if I was at least credited.
+Antivirus Notice
 
 
-This program as it is a ONE-FILE compilation **will** be flagged by antivirus' because it isn't, *bear with me here....*, "digitally signed" by some archaic system that gatekeeps software development.   This is a **clean** file.
+---
+
+NOTICE: 
+
+This program as it is a ONE-FILE compilation will be flagged by antivirus' because it isn't, bear with me here...., "digitally signed" by some archaic system that gatekeeps software development. This is a clean file.
+
+There are plenty of sources that back this up, if you're interested in reading about it there is an article here (https://www.pythonguis.com/faq/problems-with-antivirus-software-and-pyinstaller/) and there are plenty of others just a google search away.
