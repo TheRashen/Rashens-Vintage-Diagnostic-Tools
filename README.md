@@ -125,8 +125,12 @@ But it will never alter or disrupt your system and it uses a very very low overh
 
 
 ------
+NOTICE: 
+This is a ONE-FILE compiled software made entirely within PYTHON, as that's the language I'm best with. 
 
-PLEASE NOTE: This is a ONE-FILE compiled software made entirely within PYTHON, as that's the language I'm best with. 
+As this program is a ONE-FILE compilation will be flagged by antivirus' because it isn't, bear with me here...., "digitally signed" by some archaic system that gatekeeps software development. This is a clean file.
+
+There are plenty of sources that back this up, if you're interested in reading about it there is an article here (https://www.pythonguis.com/faq/problems-with-antivirus-software-and-pyinstaller/) and there are plenty of others just a google search away.
 
 
 
@@ -148,9 +152,3 @@ Antivirus Notice
 
 
 ---
-
-NOTICE: 
-
-This program as it is a ONE-FILE compilation will be flagged by antivirus' because it isn't, bear with me here...., "digitally signed" by some archaic system that gatekeeps software development. This is a clean file.
-
-There are plenty of sources that back this up, if you're interested in reading about it there is an article here (https://www.pythonguis.com/faq/problems-with-antivirus-software-and-pyinstaller/) and there are plenty of others just a google search away.
