@@ -1,156 +1,81 @@
-Rashen's Vintage Diagnostic Tools - v0.7.2.x
-==========================================
+Rashen's Vintage Diagnostic Tools
+==================================
 
-Mod scanner for Vintage Story. Point it at your mods folder, hit Scan,
-and it tells you what's broken - missing deps, conflicts, bad recipes,
-log spam sources, whatever.
+A mod scanner and utility toolkit for Vintage Story. Point it at your mods
+folder, hit Scan, and it tells you what's broken - missing dependencies,
+version conflicts, broken recipes, log spam sources, whatever. Also includes
+tools for loot searching, recipe diffing, building cylinder packs, and a
+handful of other utilities.
 
-Works fine on big packs (100+ mods). Runs local, no internet, no install.
+Runs fully local - no internet, no install needed.
 
-I have attempted to include an all-rounded HELP menu embedded inside of the application itself at the bottom left corner "Help" button.. Before you post to my issues tab on my github please look over that first.
+
+Download
+--------
+
+Grab the latest release from the Releases tab on the right.
+
+Unzip anywhere. Inside the zip is a folder - run the exe from there.
+No install needed. The output\ folder next to the exe is where everything
+the tool generates goes.
 
 
 Requirements
 ------------
 
-Windows
-Vintage Story installed, needed for save file and cache operations.
+Windows 10 or 11.
 
-The tool doesn't run VS, just needs to know where it is.
+Vintage Story needs to be installed somewhere on your machine. The tool
+doesn't run VS - it just needs to know where it is for a couple of the
+cache operations.
 
-It doesn't necessarily HAVE to have VS installed, it can actually be ran just as a log checker to make things a little easier to parse if you merely use it to 'scan runtime logs' and point at a log location or add files to it. Otherwise, yes it needs a VS data location.
-
-
-How to run
-----------
-
-Double-click the exe. Nothing else needed. 
-(Unless you want to use the Cylinder Pack Builder, then you need to make sure you follow the instructions below)
+For the Cylinder Pack Builder, ffmpeg needs to be on your PATH if you
+want MP3 conversion. OGG files work without it.
 
 
-Tabs
-----
+What it does
+------------
 
-Diagnostics
-  The main scanner. Runs dep checks, conflict detection, broken recipe
-  detection, entity spawn inspection, and a deep scan that reads every
-  JSON in every mod. Results have Ctrl+F, expand/collapse, and a sidebar
-  for jumping between sections.
+Diagnostics tab - the main scanner. Runs dependency checks, conflict
+detection, broken recipe detection, entity spawn inspection, and a deep
+scan that reads every JSON in every mod. Results have Ctrl+F search,
+expand/collapse sections, and a jump sidebar.
 
+Startup Mem Watcher - attach to a running VS process and watch RAM on a
+graph in real time. Drop named event markers so you know what was happening
+at each spike. (Heavily WIP)
 
+Modded Json Search - type an item or block code and it scans every mod zip
+for references. Shows which JSON files matched and on what line.
 
-Memory Watcher
-  Attach to a running VS process and watch RAM live on a graph. Drop named
-  event markers at any point so you know what was happening at each spike.
-  Detach whenever - the graph stays frozen so you can still look at it.
+Recipe Diff - shows which mods are patching or shadowing vanilla recipes.
 
-  -I Personally run this attached to my server as soon as it gets done caching.. After about the first hour I close it off. But it allows me to get an idea (It can also export the memory data but its a WIP) of what is using the most RAM on startup. I aim to get this to attach to tickrates and other specific information later on in development for use like VisualVM is for MC etc..
+Experimental Patcher - a collection of utility tools: Build Patch Mod,
+Repair JSON Errors, Fix Dep Versions, Strip Non-Matching Languages, DLL
+Framework Check.
 
+Custom Mod Builders - Cylinder Pack Builder, Ruins Packager, Lorebook
+Builder, and Trader Builder.
 
-
-Loot Search
-  Type an item or block code and it scans every mod zip for references to
-  it. Shows which JSON files matched and on what line. "All" mode lists
-  everything in scope without a search term..
-
-
-
-Experimental Patcher
-  Extra tools: patch mod builder, JSON error fixer, dep version fixer,
-  language file stripper, spawn rate override generator, DLL framework
-  checker, and the Custom Cylinder Pack Builder.
+(Documentation coming soon to better explain these on the github/repo/wiki)
 
 
---------
+License
+-------
 
-Cylinder Pack Builder - format notes:
-    - OGG files must be Vorbis-encoded. OGG containers with Opus or FLAC
-      inside are rejected - VS's audio decoder only handles Vorbis. This
-      is common with OGGs downloaded from certain sites (YouTube rips, etc).
-      Re-encode with ffmpeg: ffmpeg -i input.ogg -c:a libvorbis output.ogg
+See the EULA included with the release.
 
-      
-MP3 files require ffmpeg on your (installed on your system and enabled in your enviroment variables) PATH. If ffmpeg isn't installed, MP3s are silently skipped. Get it at ffmpeg.org (add to PATH during or after install). Once on PATH, restart the tool and rebuild.
+Attribution:
 
-    
-Conversion uses libvorbis quality 4, which is fine for game audio.
+If you distribute anything generated by this tool publicly - patches, content
+mods, compatibility fixes, whatever - you must credit Rashen as a contributor
+in the description of the mod page or release post, and include a link to this
+repo. If the output has a modinfo.json, list Rashen as a contributor in it.
 
-Subfolder structure is preserved in track names if you organize by album/game. All subfolders are scanned recursively.
+If you used this tool to spot problems with your own mod or to report issues
+with someone else's mod publicly, credit the tool by name and link this repo.
 
-      
-When you run the pack builder please note that all the features may not currently work as expected and it will continuesly open ffmpeg and close it in a shell window until it is done with the current task. That being said, it will output an error if it messes up at anypoint but it will attempt to still make the 'mod' regardless if 99% of the tracks are unable to be added properly.
+Feature suggestions: ping @Rashen in the Vintage Story official Discord, or
+post in the Suggestions forum under GitHub Discussions. Do not DM me on
+Discord or contact me through any other means.
 
-    
-It adds loot table drops to Drifters & Bells at a low drop-rate, default is 0.05 you are free to change these values by opening up the cylinder pack zip and going to the "assets/name/patches/" and selecting one of the two jsons that handles the different drops. I have tested this and it works with even multiple of these packs installed.
-
-
-Edit menu
----------
-
-Find (Ctrl+F) - search the scan output (sometimes the scroll bar may not show a proper highlight in the right spot, I'm currently redesigning the entire interface layout)
-Export to CSV - full scan results as a spreadsheet
-Export Per-Mod Log - filter to one mod ID and save as .txt
-Clear Unnecessary Configs - finds orphan config files from removed mods,
-  backs them up and moves them out
-Clear Cache - moves VS cache to a holding folder so VS recreates it clean
-Clear Outdated Mods - after a scan, moves older duplicate mod versions to
-  a holding folder for review
-
-The "Clear" functions do not delete them, it simply moves these things to a standalone folder within the "\VintagestoryData\"" location named "ToBeDeleted" so it is outside of your server/client's data folders and will not be ran on startup anymore, please be sure to delete these when you want to delete them. I did it this way incase it errors out and deletes things you may not want to be deleted..
-"Clear" for configs still does not work 100% as intended It is hard for me to "wildcard" for all config types when configs aren't always named the same thing the mod is.
-
-
-Preferences
------------
-
-UI Scale - 75% / 90% / 100% / 110% / 125% / 150% (restart to apply)
-Theme - multiple color themes
-
-
-Output
-------
-
-Everything the tool generates goes into an output\ folder next to the exe.
-Nothing is written to your VS installation or mods folder directly.
-
-
-
-
-
-------
-
-The only other location that may be written is in your %appdata% location, you can see this by going into Preferences>Theme Manager/Theme Folder. That location is where the themes are handled outside of the standard. Again the interface is still a WIP so not all of it may work correctly or as intended. 
-
-But it will never alter or disrupt your system and it uses a very very low overhead hardware cost to run. (I run it on my windows 7/linux old pc for testing on different OS and it works fine)
-
-
-------
-
-PLEASE NOTE: This is a ONE-FILE compiled software made entirely within PYTHON, as that's the language I'm best with. 
-
-
-
-Absolutely NO LLMs('Ai') were used during the creation of this, if something 'seems' 'ai' it is merely a happenstance due to what popular llms were used to train on was more than likely the same, or similar, sources i learned all coding from over the past 2-in-a-half-decades.
-
-I also study user interfaces, aswell as other nuanced everyday things and features that modern technology has for optimal user functionality, as a Game Dev and systems architect I use my knowledge to attempt to make things as visually pleasing as possible to our eyes as no one want to be hunched over scanning lines all day, especially folks who are *not* coders or in tech fields.
-
-
-----
-
-
-
-Credits & Attribution Requirements
-
-If you use my tool for troubleshooting issues (such as "I found x problem using this tool here: link") or any function of the tool to release something to a public page, you MUST link to my github / this page, or name "Rashen" as a contributor in your modinfo.json.
-
-I wouldn't normally do a requirement like this however, I have spent over 30 days working on this tool to get it to this current version of my free time and I would prefer it if I was at least credited.
-Antivirus Notice
-
-
----
-
-NOTICE: 
-
-This program as it is a ONE-FILE compilation will be flagged by antivirus' because it isn't, bear with me here...., "digitally signed" by some archaic system that gatekeeps software development. This is a clean file.
-
-There are plenty of sources that back this up, if you're interested in reading about it there is an article here (https://www.pythonguis.com/faq/problems-with-antivirus-software-and-pyinstaller/) and there are plenty of others just a google search away.
